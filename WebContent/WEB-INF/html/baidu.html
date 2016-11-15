@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>运输管理系统</title>
+	<link rel="stylesheet" type="text/css" href="../../resource/common/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../resource/common/css/metisMenu.min.css">
+	<link rel="stylesheet" type="text/css" href="../../resource/common/css/sidebar.css">
+	<link rel="stylesheet" href="../../resource/common/css/font-awesome.min.css">
+	<script src="../../resource/common/js/jquery-1.9.1.js"></script>
+	<script src="../../resource/common/js/bootstrap.min.js"></script>
+	<script src="../../resource/common/js/metisMenu.min.js"></script>
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=b332f8b20c666a6110fc6e6a58f518e4"></script> 
+	<script type="text/javascript">
+		 $(function() {
+			  $('#menu').metisMenu({
+			    toggle: false // disable the auto collapse. Default: true.
+			  });
+			});
+	</script>
+	<script type="text/javascript">
+		function initialize() {  
+		  var mp = new BMap.Map('map');  
+		 mp.centerAndZoom(new BMap.Point(112.945393,28.234266), 11);  
+		}  
+		   
+		function loadScript() {  
+		  var script = document.createElement("script");  
+		  script.src = "http://api.map.baidu.com/api?v=2.0&ak=249M4n4ieBknE4lE4x68GR22Nkpq2xWb&s=1 &callback=initialize";//
+		  document.body.appendChild(script);  
+		}  
+		 $(function() {
+			 loadScript();	
+		});
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">TMS</a>
+				<button class="navbar-toggle" data-toggle="collapse" data-target="#tms-navbar-collapse">
+					<span class="icon-bar"></span>
+			<div class="collapse navbar-collapse" id="tms-navbar-collapse">
+				 <ul class="nav navbar-nav">
+			        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+			        <li><a href="#">Link</a></li>
+			     </ul>
+			</div>
+			-->
+		</div> <!--container-fluid end-->		
+	</nav> <!--navbar end-->
+ 	
+	
+
+    
+
+
+	<div class="container-fluid">
+    	<div class="row">
+	       <div class="col-sm-2">
+	       		      <aside class="sidebar col-sm-12">
+				        <nav class="sidebar-nav">
+				          <ul class="metismenu" id="menu">
+				            <li class="active">
+				              <a href="#" aria-expanded="true">
+				                <span class="sidebar-nav-item-icon fa fa-cab fa-lg"></span>
+				                <span class="sidebar-nav-item">车辆管理</span>
+				                <span class="fa arrow"></span>
+				              </a>
+				              <ul aria-expanded="true">
+				                <li>
+				                  <a href="#">
+				                    <span class="sidebar-nav-item-icon fa fa-map-marker"></span>
+				                    生成发车路线
+				                  </a>
+				                </li>
+				                
+				              </ul>
+				            </li>
+				          </ul>
+				        </nav>
+				      </aside>
+	       </div>
+	       <div class="col-sm-10">
+	       		
+	       		<h3>
+	       		<label class="label label-info">车辆管理</label>
+	       		</h3>
+	       		<div class="panel panel-default">
+	       			<div class="panel-heading">
+	       				<button id="generateMap" class="btn btn-primary">生成路线</button>
+	       			</div>
+	       			<div class="panel-body">
+	       				<div id="map" style="width:1200px;height:600px;" >
+	       					
+	       				</div>
+	       			</div>
+	       		</div>
+     	   </div>
+    	</div>
+  	</div>
+ 
+</body>
+</html>
